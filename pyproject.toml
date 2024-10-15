@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "simplon-apprenticeship"
+version = "0.1.0"
+description = ""
+authors = ["laien <laienwu0112@gmail.com>"]
+package-mode=false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+
+[tool.poetry.group.viz.dependencies]
+seaborn = "^0.13.2"
+matplotlib = "^3.9.0"
+plotly = "^5.22.0"
+
+
+[tool.poetry.group.data.dependencies]
+pandas = {extras = ["aws", "excel", "gcp", "hdf5", "mysql", "parquet", "performance", "plot", "postgresql", "spss", "sql-other"], version = "^2.2.2"}
+polars = "^1.0.0"
+pyspark = {extras = ["all"], version = "^3.5.2"}
+scipy = "^1.14.1"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+sqlalchemy = "^2.0.31"
+mysql-connector-python = "^9.0.0"
+pymongo = {extras = ["serv"], version = "^4.8.0"}
+flask = "^3.0.3"
+
+
+[tool.poetry.group.scrapper.dependencies]
+selenium = "^4.22.0"
+bs4 = "^0.0.2"
+
+
+[tool.poetry.group.secret.dependencies]
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.bdd.dependencies]
+pymongo = "^4.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
