@@ -1,0 +1,38 @@
+services:
+  my_sql_db:
+    image: mysql:latest
+    container_name: ${SQL_CONTAINER_NAME}
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE_NAME}
+    volumes:
+      - sql_data_volumes:/var/lib/mysql-files/data
+  my_mongo_db:
+    image: mongo:latest
+    container_name: ${MONGO_CONTAINER_NAME}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USR}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PW}
+    restart: always
+    volumes:
+      - mongo_data_volumes:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+  sql_data_volumes:
+    name: ${SQL_VOLUME_NAME}
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data/sql_data
+      o: bind
+  mongo_data_volumes:
+    name: ${MONGO_VOLUME_NAME}
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data/mongo_data
+      o: bind
