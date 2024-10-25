@@ -17,7 +17,7 @@ plotly = "^5.22.0"
 
 
 [tool.poetry.group.data.dependencies]
-pandas = {extras = ["aws", "excel", "gcp", "hdf5", "mysql", "parquet", "performance", "plot", "postgresql", "spss", "sql-other"], version = "^2.2.2"}
+pandas = {extras = ["aws", "excel", "gcp", "hdf5", "mysql", "parquet", "performance", "plot", "postgresql", "spss", "sql-other","html"], version = "^2.2.2"}
 polars = "^1.0.0"
 pyspark = {extras = ["all"], version = "^3.5.2"}
 scipy = "^1.14.1"
